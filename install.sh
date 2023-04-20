@@ -13,15 +13,7 @@ port=$(jq -r '.port' config.json)
 sni=$(jq -r '.sni' config.json)
 path=$(jq -r '.path' config.json)
 
-dir=/usr/local/etc/xray/
-
-if [[ ! -e $dir ]]; then
-    mkdir -p $dir
-elif [[ ! -d $dir ]]; then
-    echo "$dir already exists but is not a directory" 1>&2
-fi
-
-
+mkdir -p /usr/local/etc/xray/
 
 bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install --beta
 
