@@ -41,7 +41,7 @@ newJson=$(echo "$json" | jq \
      .inbounds[0].streamSettings.realitySettings.privateKey = $pk |
      .inbounds[0].streamSettings.realitySettings.shortIds += ["'$shortId'"]')
 
-mkdir -r /usr/local/etc/xray/
+mkdir -p /usr/local/etc/xray/
 
 echo "$newJson" | sudo tee /usr/local/etc/xray/config.json >/dev/null
 sudo systemctl restart xray
