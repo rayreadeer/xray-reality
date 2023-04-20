@@ -44,17 +44,29 @@
         "decryption": "none"
       },
       "streamSettings": {
-        "network": "tcp",
+       "network": "tcp",
         "security": "reality",
+        "tcpSettings": {
+          "acceptProxyProtocol": false,
+          "header": {
+            "type": "none"
+          }
+        },
         "realitySettings": {
           "show": false,
-          "dest": "",
           "xver": 0,
-          "maxTimeDiff": 0,
-          "minClientVer": "1.8.0",
-          "serverNames": [],
+          "fingerprint": "chrome",
+          "dest": "yahoo.com:443",
+          "serverNames": [
+            "yahoo.com",
+            "www.yahoo.com"
+          ],
           "privateKey": "",
-          "shortIds": []
+          "publicKey": "",
+          "minClient": "",
+          "maxClient": "",
+          "maxTimediff": 0,
+          "shortIds": [""]
         }
       },
       "sniffing": {
