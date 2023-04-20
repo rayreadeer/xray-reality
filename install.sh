@@ -44,6 +44,7 @@ newJson=$(echo "$json" | jq \
     --arg sni "$sni" \
     --arg path "$path" \
     --arg email "$email" \
+     --arg pub "$pub" \
     '.inbounds[0].port= '"$(expr "$port")"' |
      .inbounds[0].settings.clients[0].email = $email |
      .inbounds[0].settings.clients[0].id = $uuid |
