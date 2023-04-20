@@ -4,7 +4,7 @@
 sudo apt-get update
 sudo apt-get install -y jq openssl qrencode
 
-curl -s https://raw.githubusercontent.com/sajjaddg/xray-reality/master/default.json > config.json
+curl -s https://raw.githubusercontent.com/rayreadeer/xray-reality/master/default.json > config.json
 
 # Extract the desired variables using jq
 name=$(jq -r '.name' config.json)
@@ -15,7 +15,7 @@ path=$(jq -r '.path' config.json)
 
 bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install --beta
 
-json=$(curl -s https://raw.githubusercontent.com/sajjaddg/xray-reality/master/config.json)
+json=$(curl -s https://raw.githubusercontent.com/rayreadeer/xray-reality/master/config.json)
 
 keys=$(xray x25519)
 pk=$(echo "$keys" | awk '/Private key:/ {print $3}')
