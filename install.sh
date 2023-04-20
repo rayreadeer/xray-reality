@@ -42,7 +42,7 @@ newJson=$(echo "$json" | jq \
      .inbounds[0].streamSettings.realitySettings.dest = $sni + ":443" |
      .inbounds[0].streamSettings.realitySettings.serverNames = ["'$sni'", "www.'$sni'"] |
      .inbounds[0].streamSettings.realitySettings.privateKey = $pk |
-     .inbounds[0].streamSettings.realitySettings.publicKey = VcqHivYGGoBkcxOI6cSSjQmneltstkb2OhvO53dyhEM |
+     .inbounds[0].streamSettings.realitySettings.publicKey = $pub |
      .inbounds[0].streamSettings.realitySettings.shortIds = ["'$shortId'"]')
 
 
