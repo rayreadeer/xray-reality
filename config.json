@@ -56,11 +56,8 @@
           "show": false,
           "xver": 0,
           "fingerprint": "chrome",
-          "dest": "yahoo.com:443",
-          "serverNames": [
-            "yahoo.com",
-            "www.yahoo.com"
-          ],
+          "dest": "",
+          "serverNames": [],
           "privateKey": "",
           "publicKey": "",
           "minClient": "",
