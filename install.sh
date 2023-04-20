@@ -20,6 +20,7 @@ bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release
 json=$(curl -s https://raw.githubusercontent.com/rayreadeer/xray-reality/master/config.json)
 
 keys=$(xray x25519)
+echo "$keys" >> /root/xray_key.key
 pk=$(echo "$keys" | awk '/Private key:/ {print $3}')
 pub=$(echo "$keys" | awk '/Public key:/ {print $3}')
 serverIp=$(curl -s ipv4.wtfismyip.com/text)
@@ -41,7 +42,7 @@ newJson=$(echo "$json" | jq \
      .inbounds[0].streamSettings.realitySettings.dest = $sni + ":443" |
      .inbounds[0].streamSettings.realitySettings.serverNames = ["'$sni'", "www.'$sni'"] |
      .inbounds[0].streamSettings.realitySettings.privateKey = $pk |
-     .inbounds[0].streamSettings.realitySettings.publicKey = $pub |
+     .inbounds[0].streamSettings.realitySettings.publicKey = VcqHivYGGoBkcxOI6cSSjQmneltstkb2OhvO53dyhEM |
      .inbounds[0].streamSettings.realitySettings.shortIds = ["'$shortId'"]')
 
 
