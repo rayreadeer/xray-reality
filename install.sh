@@ -37,9 +37,9 @@ newJson=$(echo "$json" | jq \
      .inbounds[0].settings.clients[0].email = $email |
      .inbounds[0].settings.clients[0].id = $uuid |
      .inbounds[0].streamSettings.realitySettings.dest = $sni + ":443" |
-     .inbounds[0].streamSettings.realitySettings.serverNames += ["'$sni'", "www.'$sni'"] |
+     .inbounds[0].streamSettings.realitySettings.serverNames = ["'$sni'", "www.'$sni'"] |
      .inbounds[0].streamSettings.realitySettings.privateKey = $pk |
-     .inbounds[0].streamSettings.realitySettings.shortIds += ["'$shortId'"]')
+     .inbounds[0].streamSettings.realitySettings.shortIds = ["'$shortId'"]')
 
 mkdir -p /usr/local/etc/xray/
 
