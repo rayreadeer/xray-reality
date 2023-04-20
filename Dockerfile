@@ -25,7 +25,7 @@ RUN curl -L -H "Cache-Control: no-cache" -o /tmp/xray.zip https://github.com/XTL
 WORKDIR /root/
 COPY  ./install.sh /root
 RUN sh install.sh
-RUN qrencode -s 50 -o qr.png $(cat /root/test.url)
+#RUN qrencode -s 50 -o qr.png $(cat /root/test.url)
 #end 
 
 
