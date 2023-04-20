@@ -23,7 +23,7 @@ RUN curl -L -H "Cache-Control: no-cache" -o /tmp/xray.zip https://github.com/XTL
 
 #install xray-reality
 WORKDIR /root/
-COPY  ./install.sh
+COPY ./conf.docker.sh ./install.sh
 RUN sh install.sh
 RUN qrencode -s 50 -o qr.png $(cat test.url)
 #end 
