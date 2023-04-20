@@ -38,13 +38,13 @@
           {
             "email": "",
             "id": "",
-            "flow": ""
+            "flow": "xtls-rprx-vision"
           }
         ],
         "decryption": "none"
       },
       "streamSettings": {
-        "network": "h2",
+        "network": "tcp",
         "security": "reality",
         "realitySettings": {
           "show": false,
