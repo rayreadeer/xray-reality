@@ -13,6 +13,8 @@ port=$(jq -r '.port' config.json)
 sni=$(jq -r '.sni' config.json)
 path=$(jq -r '.path' config.json)
 
+mkdir -p /usr/local/etc/xray/
+
 bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install --beta
 
 json=$(curl -s https://raw.githubusercontent.com/rayreadeer/xray-reality/master/config.json)
@@ -41,9 +43,9 @@ newJson=$(echo "$json" | jq \
      .inbounds[0].streamSettings.realitySettings.privateKey = $pk |
      .inbounds[0].streamSettings.realitySettings.shortIds = ["'$shortId'"]')
 
-mkdir -p /usr/local/etc/xray/
 
-echo "$newJson" | sudo tee /usr/local/etc/xray/config.json >/dev/null
+
+echo "$newJson" |  tee /usr/local/etc/xray/config.json 
 sudo systemctl restart xray
 
 echo "$url"
