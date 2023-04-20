@@ -51,8 +51,8 @@ newJson=$(echo "$json" | jq \
 echo "$newJson" |  tee /usr/local/etc/xray/config.json 
 sudo systemctl restart xray
 
-echo "$url"
 
+echo "$url" >> /root/testurl.url
 qrencode -s 120 -t ANSIUTF8 "$url"
 qrencode -s 50 -o qr.png "$url"
 
